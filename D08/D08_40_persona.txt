@@ -1,0 +1,4 @@
+persona
+  nome vc20 /nn
+  foto file
+# settings = { prefix: "D08" }
