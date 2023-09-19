@@ -1,0 +1,40 @@
+
+Il dato elementare JSON è una coppia chiave\valore
+
+I dati sono coppie del tipo chiave:valore separati da virgole
+Le parentesi graffe racchiudono un oggetto (elenco di coppie chiave:valore)
+Le parentesi quadre racchiudono un array (lista di valori)
+
+
+
+chiave è una stringa (testo racchiuso tra doppi apici)
+valore può essere
+una stringa
+un numero
+un oggetto
+un array
+un boolean (true/false)
+null
+
+{
+	"name": "Mario",
+	"surname": "Rossi",
+	"active": true,
+	"favoriteNumber": 54,
+	"birthday": {
+		"day": 1,
+		"month": 1,
+		"year": 2000
+	},
+	"languages": [ "it", "en" ],
+    "addresses":[
+                {"type":"Main",
+                 "address":"Oxfors St.",
+                 "city":"London"
+                },
+                {"type":"Alternative",
+                "address":"Cambridge St.",
+                "city":"London"
+               },
+    ]
+}
