@@ -86,3 +86,23 @@ apex_web_service.make_rest_request(
     p_http_method => 'GET'
    ) vendita
 from dual;
+
+
+
+create view d11_vendita_rest_vw as
+select * 
+  from json_table(
+apex_web_service.make_rest_request(
+    p_url => 'https://cnde8nae4maapcd-capancioni.adb.eu-zurich-1.oraclecloudapps.com/ords/cy0/d11_vendita/?limit=10000',
+    p_http_method => 'GET'
+   ),
+   '$.items[*]' columns( 
+                        id              number        path '$.id'
+                       ,data            date          path '$.data' 
+                       ,prodotto        varchar2(100) path '$.prodotto'
+                       ,cliente         varchar2(100) path '$.cliente'
+                       ,zona_cliente    varchar2(100) path '$.zona_cliente'
+                       ,quantita        number        path '$.quantita'
+                       ,importo         number        path '$.importo'
+                       )
+);
