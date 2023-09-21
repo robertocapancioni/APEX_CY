@@ -115,12 +115,6 @@ end;
 /
 
 --select privilege_id, name, pattern from user_ords_privilege_mappings;
-begin 
- oauth.delete_client(
-      p_name => 'client_d11');
- commit;
-end;
-/
 
 /*
 begin 
@@ -152,13 +146,6 @@ end;
 
 
 
-begin 
- oauth.grant_client_role(
-     'client_d11',
-     'd11.ROLE');
- commit;
-end;
-/
 
 --select * from user_ords_client_roles where client_name = 'client_d11';
 https://cnde8nae4maapcd-capancioni.adb.eu-zurich-1.oraclecloudapps.com/ords/cy0/d11/vendita/
