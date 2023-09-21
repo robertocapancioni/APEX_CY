@@ -66,7 +66,32 @@ BEGIN
     COMMIT;
 END;
 /
+
 */
+
+BEGIN
+    ords.define_template(
+            p_module_name => 'd11' ,
+            p_pattern =>  'vendita_csv/' 
+    );
+    COMMIT;
+END;
+/
+
+BEGIN
+    ords.define_handler(
+            p_module_name => 'd11' ,
+            p_pattern =>  'vendita_csv/', 
+            p_method => 'GET',
+            p_source_type => ords.source_type_csv_query,
+            p_source => 'select * from d11_vendita order by id',
+            p_items_per_page => 25
+    );
+
+    COMMIT;
+END;
+/
+
 begin
   ords.create_role('d11.ROLE');     
  
